@@ -32,8 +32,22 @@ Para ejecutar un paquete específico sin tener que ir a su directorio, puedes us
 pnpm --filter <packageName> dev 
 ```
 
+## Contribuyendo a la Prueba Técnica
+
+Para contribuir a la Prueba Técnica, siga los siguientes pasos:
+
+### 1. Hacer un Fork del Repositorio
+
+Primero, necesitará hacer un "fork" del repositorio. Esto creará una copia del repositorio en su propia cuenta de GitHub. Para hacer esto, simplemente haga clic en el botón "Fork" en la parte superior derecha de la página del repositorio.
+
+### 2. Abrir una Pull Request
+
+Finalmente, una vez que haya "pushed" sus cambios a su fork del repositorio, necesitará abrir una "pull request" para que sus cambios puedan ser revisados. Para hacer esto, navegue a la página de su fork del repositorio en GitHub y haga clic en el botón "Pull request". Siga las instrucciones para abrir una nueva pull request.
+
+Por favor, asegúrese de proporcionar una descripción detallada de los cambios que ha realizado en el cuerpo de la pull request. Esto ayudará a los revisores a entender qué ha cambiado y por qué.
+
 ## Notas Generales
-Se pide mejorar la integración de Typescript en el proyecto con todos aquellos cambios que se consideren necesarios para 
+Se pide mejorar la integración de Typescript en el proyecto con todos aquellos cambios que se consideren necesarios para
 mejorar la calidad del mismo y la experiencia de desarrollo.
 
 Además se pueden realizar mejoras en el código de los componentes y en la estructura de los mismos para ampliar su funcionalidad
@@ -46,14 +60,14 @@ Para ejecutar la prueba 01, utilice el siguiente comando:
 pnpm --filter pruebas-01 dev
 ```
 
-Esta aplicación tiene un componente App que pinta dos instancias de un componente llamado `Counter`. 
-Cada instancia de `Counter` tiene un botón que incrementa su valor en uno. El componente `Counter` recibe un 
+Esta aplicación tiene un componente App que pinta dos instancias de un componente llamado `Counter`.
+Cada instancia de `Counter` tiene un botón que incrementa su valor en uno. El componente `Counter` recibe un
 prop llamado `value` que se utiliza para establecer el valor del contador.
 
-Se desea optimizar el rendimiento de la aplicación. Para ello, se deben hacer las modificaciones necesarias 
+Se desea optimizar el rendimiento de la aplicación. Para ello, se deben hacer las modificaciones necesarias
 para que no se actualice la instancia del componente `Counter` con el que no se ha interactuado.
 
-Cada componente tiene un console.info que se ejecuta cada vez que se actualiza. El resultado final debe ser 
+Cada componente tiene un console.info que se ejecuta cada vez que se actualiza. El resultado final debe ser
 que solo se muestre por console el info del App y únicamente del Counter con el que se ha interactuado
 
 Se pide documentar el codigo con comentarios explicando el porqué de las modificaciones realizadas.
@@ -89,5 +103,3 @@ Existe un bug en el cual, si se borra el primer elemento rápidamente antes de q
 la lista se quedará incosistente mostrando el primer elemento que habíamos borrado.
 
 Se pide modificar el código para que tras refrescarse la lista, esta se quede consistente y no muestre elementos que han sido borrados.
-
-
