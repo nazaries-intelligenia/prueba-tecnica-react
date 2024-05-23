@@ -1,29 +1,24 @@
 import { Col, Row } from "antd";
-import { useState } from "react";
+import { CounterModel } from "../models/counter.model";
+import { CounterProvider } from "./counter-provider.component";
 
 export const Counter = () => {
-    const [count, setCount] = useState(0)
-
-    const handleIncrement = () => {
-        setCount(prev => prev + 1)
-    }
-
-    const handleDecrement = () => {
-        setCount(prev => prev - 1)
-    }
-
     return (
-        <Row gutter={16}>
-            <Col>
-                <button onClick={handleDecrement}>Decrement</button>
-            </Col>
-            <Col>
-                <span>{count}</span>
-            </Col>
+        <CounterProvider
+            render={({ count, increment, decrement }: CounterModel) => {
+                return <Row gutter={16}>
+                    <Col>
+                        <button onClick={decrement}>Decrement</button>
+                    </Col>
+                    <Col>
+                        <span>{count}</span>
+                    </Col>
 
-            <Col>
-                <button onClick={handleIncrement}>Increment</button>
-            </Col>
-        </Row>
+                    <Col>
+                        <button onClick={increment}>Increment</button>
+                    </Col>
+                </Row>
+            }}
+        />
     )
 }

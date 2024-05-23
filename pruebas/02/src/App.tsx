@@ -16,7 +16,7 @@ function App() {
             </Col>
             <Col span={24}>
                 <Row justify={"center"}>
-                    <Col >
+                    <Col>
                         <FancyCounter/>
                     </Col>
                 </Row>
