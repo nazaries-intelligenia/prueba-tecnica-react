@@ -1,6 +1,7 @@
+import * as React from "react";
 import { Col, Row } from "antd";
 
-export const Counter = (props: { name: string, onChange: (newValue: number) => void, value: number }) => {
+const Counter = (props: { name: string, onChange: (newValue: number) => void, value: number }) => {
     console.info("render counter " + props.name)
 
     return (
@@ -18,3 +19,8 @@ export const Counter = (props: { name: string, onChange: (newValue: number) => v
         </Row>
     )
 }
+
+// We use React.memo, which is a higher-order component (HOC) that lets us optimize
+// functional components. It functions by memoizing the render result of the component,
+// so it won't re-render if the component gets the same props as previously
+export default React.memo(Counter)
