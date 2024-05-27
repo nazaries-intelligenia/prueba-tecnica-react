@@ -1,20 +1,36 @@
+import React from "react";
 import { Col, Row } from "antd";
 
-export const Counter = (props: { name: string, onChange: (newValue: number) => void, value: number }) => {
-    console.info("render counter " + props.name)
+
+// The Counter component is memoized using React.memo to prevent unnecessary re-renders.
+// It receives props to display its current value and to handle increment/decrement actions.
+// The component displays a value and two buttons to increment and decrement the value.
+interface CounterProps {
+    name: string;
+    value: number;
+    onIncrement: () => void;
+    onDecrement: () => void;
+}
+
+const Counter: React.FC<CounterProps> = React.memo(({ name, value, onIncrement, onDecrement }) => {
+    console.info("render counter " + name);
 
     return (
         <Row gutter={16}>
             <Col>
-                <button onClick={() => props.onChange(props.value - 1)}>Decrement</button>
+                {/* Button to decrement the value */}
+                <button onClick={onDecrement}>Decrement</button>
             </Col>
             <Col>
-                <span>{props.value}</span>
+                {/* Display the value */}
+                <span>{value}</span>
             </Col>
-
             <Col>
-                <button onClick={() => props.onChange(props.value + 1)}>Increment</button>
+                {/* Button to increment the value */}
+                <button onClick={onIncrement}>Increment</button>
             </Col>
         </Row>
-    )
-}
+    );
+});
+
+export default Counter;
